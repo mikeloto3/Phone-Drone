@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PhoneDrone</string>
+    <string name="deviceList">List of Devices</string>
+    <string name="Controller">Controller</string>
+    <string name="Receiver">Receiver</string>
+    <string name="Note">Please choose an action.</string>
+    <string name="searching">Searching...</string>
+    <string name="phone">PHONE</string>
+    <string name="drone">DRONE</string>
+    <string name="textS">20sp</string>
+    <string name="action">Action:</string>
+    <string name="control_note">-This action will control the drone.</string>
+    <string name="receiver_note">-This action will serve as a receiver of commands from the controller.</string>
+</resources>
