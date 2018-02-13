@@ -12,19 +12,27 @@ import android.view.SurfaceHolder;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.akoni.phonedrone.ConnectP2P.ConnectDevice;
 import com.example.akoni.phonedrone.DroneControl.ControlViews.DroneView;
 import com.example.akoni.phonedrone.DroneControl.ControlViews.JoyStickView;
 import com.example.akoni.phonedrone.R;
+import com.example.akoni.phonedrone.Threads.P2PConnectionThreads.ServerThread;
 
 public class DroneController extends AppCompatActivity implements JoyStickView.JoyStickListener{
 
     //to get X and Y only for both joysticks
     private TextView leftX, leftY, rightX, rightY;
+    private ServerThread serverThread;
+    private static final int port = 8888;
+    private ConnectDevice device;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drone_controller);
+
+        serverThread = new ServerThread(port);
+        new Thread(serverThread).start();
 
         //DroneView droneView = new DroneView(this);
         JoyStickView joyStickLeft = findViewById(R.id.joyStickLeft);

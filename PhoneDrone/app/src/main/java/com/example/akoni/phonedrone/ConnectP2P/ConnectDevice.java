@@ -114,4 +114,6 @@ public class ConnectDevice extends AppCompatActivity {
         Intent i = new Intent(this, ActionEntry.class);
         startActivity(i);
     }
+
+
 }

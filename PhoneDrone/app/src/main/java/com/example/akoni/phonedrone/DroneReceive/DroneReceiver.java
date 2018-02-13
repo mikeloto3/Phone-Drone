@@ -38,6 +38,8 @@ import android.widget.Toast;
 
 import com.example.akoni.phonedrone.Interfaces.CameraSupport;
 import com.example.akoni.phonedrone.R;
+import com.example.akoni.phonedrone.Threads.P2PConnectionThreads.ClientThread;
+import com.example.akoni.phonedrone.Threads.P2PConnectionThreads.ServerThread;
 
 import net.majorkernelpanic.streaming.Session;
 import net.majorkernelpanic.streaming.rtsp.RtspClient;
@@ -53,6 +55,9 @@ import java.util.Date;
 import java.util.List;
 
 public class DroneReceiver extends AppCompatActivity{
+    private ClientThread clientThread;
+
+    private int port = 0;
 
     private TextureView textureView;
     private TextureView.SurfaceTextureListener textureListener;
